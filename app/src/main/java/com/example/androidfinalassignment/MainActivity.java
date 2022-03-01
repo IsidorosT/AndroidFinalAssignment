@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                                     if (task.isSuccessful())
                                     {
                                         user = auth.getCurrentUser();
-                                        Intent map = new Intent(MainActivity.this,Home.class);
+                                        Intent map = new Intent(MainActivity.this,TabbedHome.class);
                                         startActivity(map);
                                     }
                                     else {
