@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         String username = "";
                         String password = "";
-//                        if(UsernameText.getText() != null)
-//                            username = UsernameText.getText().toString();
+                        if(UsernameText.getText() != null)
+                            username = UsernameText.getText().toString();
 //                        if(PasswordText.getText() != null)
 //                            password = PasswordText.getText().toString();
 //                        if(!username.equals("") || !password.equals(""))
