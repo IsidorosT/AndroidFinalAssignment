@@ -1,12 +1,17 @@
 package com.example.androidfinalassignment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +24,8 @@ public class GrammarPage extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    LinearLayout Cards;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -39,10 +46,10 @@ public class GrammarPage extends Fragment {
     // TODO: Rename and change types and number of parameters
     public static GrammarPage newInstance(String param1, String param2) {
         GrammarPage fragment = new GrammarPage();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+        //Bundle args = new Bundle();
+        //args.putString(ARG_PARAM1, param1);
+        //args.putString(ARG_PARAM2, param2);
+        //fragment.setArguments(args);
         return fragment;
     }
 
@@ -50,15 +57,34 @@ public class GrammarPage extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            //mParam1 = getArguments().getString(ARG_PARAM1);
+            //mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_grammar_page, container, false);
+        View view = inflater.inflate(R.layout.fragment_grammar_page, container, false);
+        Cards = view.findViewById(R.id.linear);
+            CardView card = new CardView(this.getContext());
+            LinearLayout.LayoutParams layoutparams = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT
+            );
+
+            card.setLayoutParams(layoutparams);
+            card.setRadius(15);
+            card.setPadding(25, 25, 25, 25);
+            card.setCardBackgroundColor(Color.MAGENTA);
+            card.setMaxCardElevation(30);
+            card.setMaxCardElevation(6);
+            Cards.addView(card);
+
+
+        return inflater.inflate(R.layout.fragment_grammar_page, container,false);
     }
+
 }

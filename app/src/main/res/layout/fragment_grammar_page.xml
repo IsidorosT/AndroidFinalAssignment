@@ -14,4 +14,12 @@
         android:textColor="@color/black"
         android:background="@color/white"/>
 
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="409dp"
+        android:layout_height="677dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"></LinearLayout>
+
 </FrameLayout>
