@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">AndroidFinalAssignment</string>
+    <string name="app_name">Skill It</string>
     <string name="title_activity_home_tabs">HomeTabs</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_1">Vocabulary</string>
+    <string name="tab_text_2">Grammar</string>
+    <string name="tab_text_3">Exercises</string>
     <string name="title_activity_tabbed_home">TabbedHome</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -38,30 +38,30 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         String username = "";
                         String password = "";
-                        if(UsernameText.getText() != null)
-                            username = UsernameText.getText().toString();
-                        if(PasswordText.getText() != null)
-                            password = PasswordText.getText().toString();
-                        if(!username.equals("") || !password.equals(""))
-                        {
-                            auth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task)
-                                {
-                                    if (task.isSuccessful())
-                                    {
-                                        user = auth.getCurrentUser();
-                                        Intent map = new Intent(MainActivity.this,TabbedHome.class);
-                                        startActivity(map);
-                                    }
-                                    else {
-                                        user = null;
-                                        Intent map = new Intent(MainActivity.this,MainActivity.class);
-                                        startActivity(map);
-                                    }
-                                }
-                            });
-                        }
+//                        if(UsernameText.getText() != null)
+//                            username = UsernameText.getText().toString();
+//                        if(PasswordText.getText() != null)
+//                            password = PasswordText.getText().toString();
+//                        if(!username.equals("") || !password.equals(""))
+//                        {
+//                            auth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<AuthResult> task)
+//                                {
+//                                    if (task.isSuccessful())
+//                                    {
+//                                        user = auth.getCurrentUser();
+                                          Intent map = new Intent(MainActivity.this,TabbedHome.class);
+                                          startActivity(map);
+//                                    }
+//                                    else {
+//                                        user = null;
+//                                        Intent map = new Intent(MainActivity.this,MainActivity.class);
+//                                        startActivity(map);
+//                                    }
+//                                }
+//                            });
+//                        }
 
 
                     }
