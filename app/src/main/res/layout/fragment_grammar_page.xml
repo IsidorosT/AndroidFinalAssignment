@@ -20,6 +20,7 @@
         android:layout_height="677dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"></LinearLayout>
+        tools:layout_editor_absoluteY="1dp">
+    </LinearLayout>
 
 </FrameLayout>

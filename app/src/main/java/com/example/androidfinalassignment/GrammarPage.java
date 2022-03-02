@@ -60,7 +60,6 @@ public class GrammarPage extends Fragment {
             //mParam1 = getArguments().getString(ARG_PARAM1);
             //mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
@@ -83,8 +82,6 @@ public class GrammarPage extends Fragment {
             card.setMaxCardElevation(6);
             Cards.addView(card);
 
-
         return inflater.inflate(R.layout.fragment_grammar_page, container,false);
     }
-
 }

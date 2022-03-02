@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         UsernameText = findViewById(R.id.UsernameText);
         PasswordText = findViewById(R.id.PasswordText);
         LoginButton = findViewById(R.id.LoginButton);
@@ -62,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
 //                                }
 //                            });
 //                        }
-
-
                     }
                 }
         );
