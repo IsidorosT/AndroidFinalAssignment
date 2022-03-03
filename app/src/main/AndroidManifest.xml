@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidFinalAssignment">
-        <activity android:name=".ShowGrammarContent"></activity>
+        <activity android:name=".ShowExerciseContent"></activity>
+        <activity android:name=".ShowVocabularyContent" />
+        <activity android:name=".ShowGrammarContent" />
         <activity
             android:name=".TabbedHome"
             android:label="@string/title_activity_tabbed_home"

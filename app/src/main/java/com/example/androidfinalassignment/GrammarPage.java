@@ -90,14 +90,6 @@ public class GrammarPage extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_grammar_page, container, false);
         Cards = view.findViewById(R.id.linear);
-        /*
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
-        params.setMargins(0, 0, 60, 0);
-        Cards.setLayoutParams(params);
-
-         */
         Cards.setOrientation(LinearLayout.VERTICAL);
 
         db = FirebaseFirestore.getInstance();
@@ -116,34 +108,6 @@ public class GrammarPage extends Fragment {
                 }
             }
         });
-        /*
-        for(int i = 0;i<5;i++){
-            CardView card = new CardView(this.getContext());
-            LinearLayout.LayoutParams layoutparams = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            );
-            layoutparams.setMargins(0,100,0,100);
-            card.setLayoutParams(layoutparams);
-
-            LinearLayout cardlayout = new LinearLayout(this.getContext());
-            cardlayout.setOrientation(LinearLayout.VERTICAL);
-            TextView text = new TextView(this.getContext());
-            text.setText("Title\n");
-            cardlayout.addView(text);
-            TextView description = new TextView(this.getContext());
-            description.setText("dgflkdsjgfkjdshdskljfhdskjlfhdskjfhdskjfhdskjfhdskfhdskjfhdskjfhdskjfhdskjfhdskjfdskjfhsdkjfhdskjfhsdkjfhsdkjfhsdkfjsdhkjfsdhkjfhskdjfhksdjf\n");
-            cardlayout.addView(description);
-            Button button = new Button(this.getContext());
-            button.setText("View");
-            cardlayout.addView(button);
-            card.addView(cardlayout);
-            Cards.addView(card);
-
-
-        }
-
-         */
 
 
         return view;
