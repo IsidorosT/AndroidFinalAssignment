@@ -30,6 +30,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.gson.Gson;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -50,7 +51,7 @@ public class VocabularyPage extends Fragment {
     FirebaseFirestore db;
     List<VocabularyContent> VocabularyContents = new LinkedList<>();
     LinearLayout Cards;
-    List<Bitmap> Images = new LinkedList<>();
+    HashMap<String,Bitmap> Images = new HashMap<>();
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -122,7 +123,7 @@ public class VocabularyPage extends Fragment {
                     public void onSuccess(byte[] bytes) {
                         byte[]image = bytes;
                         Bitmap bmp = BitmapFactory.decodeByteArray(image, 0, image.length);
-                        Images.add(bmp);
+                        Images.put(VocabularyContents.get(x).Title,bmp);
                         if(x == VocabularyContents.size()-1){
                             LoadViews();
                         }
@@ -146,7 +147,7 @@ public class VocabularyPage extends Fragment {
     }
     public void LoadViews() {
         for(int i = 0;i<VocabularyContents.size();i++){
-            final int x = i;
+            int x = i;
             CardView card = new CardView(this.getContext());
             LinearLayout.LayoutParams layoutparams = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -161,7 +162,7 @@ public class VocabularyPage extends Fragment {
             text.setText(VocabularyContents.get(i).Title);
             cardlayout.addView(text);
             ImageView description = new ImageView(this.getContext());
-            description.setImageBitmap(Images.get(i));
+            description.setImageBitmap(Images.get(VocabularyContents.get(i).Title));
             cardlayout.addView(description);
             Button button = new Button(this.getContext());
             button.setText("View");

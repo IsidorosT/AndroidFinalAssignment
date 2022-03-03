@@ -85,7 +85,7 @@ public class ExercisesPage extends Fragment {
 
         db = FirebaseFirestore.getInstance();
 
-        db.collection("GrammarContents").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("ExerciseContents").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
