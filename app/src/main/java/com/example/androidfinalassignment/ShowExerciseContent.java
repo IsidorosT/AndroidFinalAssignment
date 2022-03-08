@@ -60,14 +60,7 @@ public class ShowExerciseContent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_exercise_content);
         //We taking Record Audio Permissions for Speech Recognition - SpeechToText
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)!= PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.RECORD_AUDIO},101);
-        }
-        if (checkCallingOrSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_DENIED) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, 101);
-            }
-        }
+
         LocationView = findViewById(R.id.locationView);
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         location loc = new location();
@@ -82,15 +75,7 @@ public class ShowExerciseContent extends AppCompatActivity {
         }
 
          */
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    MY_PERMISSIONS_REQUEST_LOCATION);
-
-
-        }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 0, loc);
 
         Intent intent = getIntent();
