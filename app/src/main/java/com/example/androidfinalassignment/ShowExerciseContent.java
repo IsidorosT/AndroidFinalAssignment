@@ -185,14 +185,14 @@ public class ShowExerciseContent extends AppCompatActivity {
                         //Here we taking results from voice
                         ArrayList<String> data = results.getStringArrayList(speechRecognizer.RESULTS_RECOGNITION);
 
-                        answer.setText(answer.getText() + " " +data.get(0));
+                        answer.setText(data.get(0));
                     }
 
                     @Override
                     public void onPartialResults(Bundle partialResults) {
                         ArrayList<String> data = partialResults.getStringArrayList(speechRecognizer.RESULTS_RECOGNITION);
 
-                        answer.setText(answer.getText() + " " +data.get(0));
+                        answer.setText(data.get(0));
                     }
 
                     @Override
