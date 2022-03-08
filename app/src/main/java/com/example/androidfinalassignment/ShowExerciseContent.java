@@ -38,7 +38,6 @@ import java.util.List;
 import java.util.Random;
 
 
-
 public class ShowExerciseContent extends AppCompatActivity {
 
     ExerciseContent Content;
@@ -52,9 +51,11 @@ public class ShowExerciseContent extends AppCompatActivity {
     List<Boolean> ActiveSounds = new LinkedList<>();
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     LocationManager locationManager;
-    public Context getContext(){
+
+    public Context getContext() {
         return this.getApplicationContext();
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +77,16 @@ public class ShowExerciseContent extends AppCompatActivity {
 
          */
 
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 0, loc);
 
         Intent intent = getIntent();
